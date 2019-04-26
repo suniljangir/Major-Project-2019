@@ -1,0 +1,348 @@
+<html>
+<head>
+    <title>Prediction and info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="../static/js/gauge.min.js"></script>
+</head>
+
+<style>
+    .gauge {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .gaugeClass {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top justify-content-center"  >
+        <a class="navbar-brand" href="#" style="font-size:20px;text-shadow: 0 3px 2px rgba(1,1,1,1);">AQI & LUNG HEALTH</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h1 class="nav-link" style="font-size:15px;text-shadow: 0 3px 2px rgba(1,1,1,1);">{{ name }}</h1>
+                </li>
+                <li class="nav-item">
+                    <h1 class="nav-link" style="font-size:15px;text-shadow: 0 3px 2px rgba(1,1,1,1);">{{ emailid }}</h1>
+                </li>
+                <li class="nav-item">
+                    <form action="/logout">
+                        <button class="btn btn-md btn btn-primary">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+ <div class="jumbotron justify-content-center" style="border-radius:2em;font-size:30px;text-shadow: 0 3px 2px rgba(1,1,1,0.2);">
+     <div class="text-center">
+         <h1 style="margin-top:5%;"> Lung Disease Possibility is</h1>
+         <hr style="width:75%;">
+         <div class="card mx-auto" style="width:50%;">
+             {% if svc_predict == "Low" %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">{{ svc_predict }}</div>
+             </div>
+             {% elif svc_predict == "Medium" %}
+             <div class="card bg-warning text-white">
+                 <div class="card-body">{{ svc_predict }}</div>
+             </div>
+             {% else %}
+             <div class="card bg-danger text-white">
+                 <div class="card-body">{{ svc_predict }}</div>
+             </div>
+             {% endif %}
+         </div>
+     </div>
+ </div>
+
+
+<div class="jumbotron text-center" style="border-radius:2em;font-size:30px;text-shadow: 0 3px 2px rgba(1,1,1,0.2);">
+    <h1> Air Quality</h1>
+    <hr style="width:75%;">
+    <div class="gaugeClass">
+        <div class="container row">
+            <div class="col-md-4">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">Today's level</h4>
+                        <div class="gauge">
+                            <canvas height="100px" width="150px" id="canvas-preview-tl"></canvas>
+                        </div>
+                        <p class="card-text">{{ today_level_str }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">Tomorrow's level</h4>
+                        <div class="gauge">
+                        <canvas height="100px" width="150px" id="canvas-preview-toml"></canvas>
+                        </div>
+                        <p class="card-text">{{ tomorrow_level_str }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">Further level</h4>
+                        <div class="gauge">
+                            <canvas height="100px" width="150px" id="canvas-preview-dtl"></canvas>
+                        </div>
+                        <p class="card-text">{{ dayaftertomorrow_level_str }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron text-center" style="border-radius:2em;">
+    <h3>Today's Air quality effect on health</h3>
+    {% if today_level_str == "good" %}
+    <p>Minimal Impact.</p>
+    {% elif today_level_str == "satisfactory" %}
+    <p>May cause minor breathing discomfort to sensitive people.</p>
+    {% elif today_level_str == "moderate" %}
+    <p>May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults. </p>
+    {% elif today_level_str == "poor" %}
+    <p>May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease. </p>
+    {% elif today_level_str == "very poor" %}
+    <p>May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases. </p>
+    {% else %}
+    <p>May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity. </p>
+    {% endif %}
+</div>
+
+
+<div class="jumbotron justify-content-center" style="border-radius:2em;font-size:30px;text-shadow: 0 3px 2px rgba(1,1,1,0.2);">
+     <div class="text-center">
+         <h1>Some do's and dont's</h1>
+         <hr style="width:75%;">
+         <div class="card mx-auto">
+             {% if today_level_str == "good" %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">Be highly active outside and spend more time.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Breathe as much fresh air as you can.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Get involved in prolonged and heavy exertion.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Try to use eco- friendly modes of transportation.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not contaminate the ambient air.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not use pollution emitting vehicles too much.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Limit the usage of insecticides in agricultural activities.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not burn the garbage.</div>
+             </div>
+             {% elif today_level_str == "satisfactory" %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">Spend time outdoors but in moderation.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Do less intense and heavy outdoor exercises</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Sensitive people should take more breaks often and carry their medicines along.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People with heart and lung diseases should keep their outdoor activities in check.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Avoid heavy exertion outdoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not get involved in activities which make air dirty and polluted.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Asthmatics should avoid being outdoors as they may experience breathing problems.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Avoid burning garbage and residual agricultural crops.</div>
+             </div>
+             {% elif today_level_str == "moderate" %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">Reduce prolonged or heavy exertion outside.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Take more breaks in between while performing outdoor activities.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People who are sensitive should shift their activities indoors.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People suffering from respiratory problems should spend time indoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not get involved in strenuous physical activities outdoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside without taking precautionary measures.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Sensitive people should avoid getting involved in prolonged or heavy exertion.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">People with respiratory problems should avoid being outdoors.</div>
+             </div>
+             {% elif today_level_str == "poor" %}
+            <div class="card bg-success text-white">
+                 <div class="card-body">Reduce prolonged or heavy exertion outside.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Take more breaks in between while performing outdoor activities.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People who are sensitive should shift their activities indoors.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People suffering from respiratory problems should spend time indoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not get involved in strenuous physical activities outdoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside without taking precautionary measures.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Sensitive people should avoid getting involved in prolonged or heavy exertion.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">People with respiratory problems should avoid being outdoors.</div>
+             </div>
+             {% elif today_level_str == "very poor" %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">Perform more indoor activities.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Reschedule necessary outdoor activities to the time when air quality is comparatively better.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People who are sensitive should shift their activities indoors.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">People suffering from respiratory problems should spend time indoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not perform prolonged or heavy exertion at all.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside without taking precautionary measures.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Sensitive people should avoid getting involved in prolonged or heavy exertion.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside without wearing air pollution protection mask.</div>
+             </div>
+             {% else %}
+             <div class="card bg-success text-white">
+                 <div class="card-body">Try to stay indoors as much as possible.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Keep medicines handy while going outside.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Sensitive people should stay indoors and keep the level of their activities low.</div>
+             </div>
+             <div class="card bg-success text-white">
+                 <div class="card-body">Take necessary measures to keep indoor air pollutants level low.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Avoid all types of physical activities outside.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Don’t indulge in any kind of exertion while being outdoors.</div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside the home without taking all precautionary </div>
+             </div>
+             <div class="card bg-danger text-white">
+                 <div class="card-body">Do not step outside without wearing air pollution protection mask.</div>
+             </div>
+             {% endif %}
+         </div>
+     </div>
+ </div>
+
+
+</body>
+<script>
+
+
+    var tl = '{{ today_level }}';
+    var toml = '{{ tomorrow_level }}';
+    var dtl = '{{ dayaftertomorrow_level }}';
+
+    var opts = {
+    lines: 12, // The number of lines to draw
+    angle: 0.15, // The length of each line
+    lineWidth: 0.44, // The line thickness
+    pointer: {
+        length: 0.9, // The radius of the inner circle
+        strokeWidth: 0.035, // The rotation offset
+        color: '#000000' // Fill color
+    },
+    limitMax: 'false',
+    staticZones: [
+    {strokeStyle: "#26ff67", min: 0, max: 50}, // Green
+    {strokeStyle: "#1eb710", min: 50, max: 100},
+    {strokeStyle: "#b6d11d", min: 100, max: 200},
+    {strokeStyle: "#FFDD00", min: 200, max: 300}, // Yellow
+    {strokeStyle: "#ed9e17", min: 300, max: 400},
+    {strokeStyle: "#F03E3E", min: 400, max: 500} // Red
+    ],
+    strokeColor: '#EEEEEE', // to see which ones work best for you
+    generateGradient: true
+    };
+
+
+    var targettl = document.getElementById('canvas-preview-tl');
+    var gaugetl = new Gauge(targettl).setOptions(opts);
+    gaugetl.maxValue = 500;
+    gaugetl.animationSpeed = 32;
+    gaugetl.set(tl);
+
+    var targettoml = document.getElementById('canvas-preview-toml');
+    var gaugetoml = new Gauge(targettoml).setOptions(opts);
+    gaugetoml.maxValue = 500;
+    gaugetoml.animationSpeed = 32;
+    gaugetoml.set(toml);
+
+    var targetdtl = document.getElementById('canvas-preview-dtl');
+    var gaugedtl = new Gauge(targetdtl).setOptions(opts);
+    gaugedtl.maxValue = 500;
+    gaugedtl.animationSpeed = 32;
+    gaugedtl.set(dtl);
+</script>
+<html>
