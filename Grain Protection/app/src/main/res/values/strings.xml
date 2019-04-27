@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Grain Protection</string>
+    <string name="slogan">“Be assured, a God who spoke the universe into existence would not need grains of dust to fight holy wars for him.”  </string>
+    <string name="title_activity_maps">Map</string>
+    <array name="spinnervalues">
+        <item>Select your state</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jummu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttarakhand</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+
+    </array>
+    <string name="title_activity_homenav">Homenav</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <array name="crops">
+        <item>Select your crop</item>
+        <item>Wheat</item>
+        <item>Rice</item>
+        <item>Cotton</item>
+        <item>Tea</item>
+        <item>Sugarcane</item>
+        <item>Jute</item>
+    </array>
+</resources>

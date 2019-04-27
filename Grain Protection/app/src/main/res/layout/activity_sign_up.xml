@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night"
+    tools:context="com.example.siddharth.grainprotection.SignUp">
+
+
+    <LinearLayout
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtphone"
+            android:hint="PHONE-NUMBER / फ़ोन नंबर "
+            android:textColorHint="#fff"
+
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:inputType="phone"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtname"
+            android:hint="Name /नाम"
+            android:textColorHint="#fff"
+
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/location1"
+            android:hint="Location / स्थान "
+            android:textColorHint="#fff"
+
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtPassword"
+            android:hint="Password / पारण शब्द "
+            android:textColorHint="#fff"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnSignUP"
+        android:text="SIGN-UP /   साइन अप करें"
+        android:textColor="@android:color/white"
+        app:shadowColor="@android:color/black"
+        app:shadowEnabled="true"
+        android:layout_margin="8dp"
+        app:buttonColor="@color/btnsignup"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+
+    </info.hoang8f.widget.FButton>
+
+
+</RelativeLayout>

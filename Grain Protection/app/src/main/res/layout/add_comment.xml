@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtphone1"
+            android:hint="Mobile Number  /  मोबाइल नंबर"
+            android:textColorHint="@color/colorPrimary"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtLocation"
+            android:hint="location /  स्थान "
+            android:textColorHint="@color/colorPrimary"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtComment"
+            android:hint="Comment  /  टिप्पणियाँ भेजें  "
+            android:textColorHint="@color/colorPrimary"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+<TextView
+    android:paddingTop="10dp"
+    android:paddingBottom="15dp"
+    android:text="सबसे पहले जगह की छवि को चुनिंदा विकल्प पर क्लिक करके चुनें और फिर अपलोड विकल्प पर क्लिक करके छवि को ऊपर उठाएं"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+
+    />
+
+
+
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnSelect"
+                android:text="Select"
+                android:textColor="@android:color/black"
+                app:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                android:layout_margin="8dp"
+                app:buttonColor="@color/btnsignactive"
+                app:shadowHeight="5dp"
+                app:cornerRadius="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+
+            </info.hoang8f.widget.FButton>
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnUpload"
+                android:text="upload"
+                android:textColor="@android:color/black"
+                app:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                android:layout_margin="8dp"
+                app:buttonColor="@color/btnsignup"
+                app:shadowHeight="5dp"
+                app:cornerRadius="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+
+            </info.hoang8f.widget.FButton>
+
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+             android:icon="@drawable/ic_home_black_24dp"
+            android:title="HOME /होम" />
+        <item
+            android:id="@+id/nav_msp"
+            android:icon="@drawable/ic_bookmark_black_24dp"
+            android:title="MSP/ न्यूनतम समर्थन मूल्य" />
+        <item
+            android:id="@+id/nav_call"
+            android:icon="@drawable/ic_local_phone_black_24dp"
+            android:title="CALL/ कॉल" />
+        <item
+            android:id="@+id/nav_sell"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="SELL/बेचना" />
+        <item
+            android:id="@+id/nav_nearest"
+            android:icon="@drawable/ic_near_me_black_24dp"
+            android:title="NEAREST/निकटतम स्थान " />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_arrow_back_black_24dp"
+            android:title="LOGOUT/लोग आउट" />
+    </group>
+
+
+</menu>
