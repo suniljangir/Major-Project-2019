@@ -1,4 +1,5 @@
 # GrainProtection
+# Team Members: Siddarth Jain, Siddharth Sharma, Siddharth Singh Tomar, Vatsal Babel
 
 India, one of the world’s largest food producers, is trying to tackle waste during production, 
 processing, retailing and consumption by funding internal initiatives and by partnerships on best practice and technology 
