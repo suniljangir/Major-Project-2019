@@ -1,0 +1,14 @@
+$hive --service metastore
+Starting Hive Metastore Server
+
+hive> create table aviation(
+    > year INT,
+    > month INT,
+    > flight_num INT,
+    > origin STRING,
+    > destination STRING,
+    > cancelled INT,
+    > cancel_code INT,
+    > diversion INT)
+    > ROW FORMAT DELIMITATED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+OK

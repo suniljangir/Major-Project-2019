@@ -1,0 +1,28 @@
+#ifconfig
+#ping 192.168.10.191
+#rpm -ivh ..
+#rpm -q jdk 
+#JAVA_HOME=..
+#vim /root/.bashrc
+
+#source/root/.bashrc
+#jps
+
+#rpm ivh https://hadoop.apache.org/release/3.2.0.html --replacefiles
+
+#cd /etc/hadoop
+#ls
+#vim hdfs.xml
+
+#vim core-site.xml 
+
+#hadoop-daemon.sh start datanode
+
+#cd /etc/hadoop/
+#ls
+#vim mapred-site.xml
+
+#hadoop-daemon.sh start tasktracker
+#jps
+
+#hadoop fs -put/home/cloudera/DelayedFlights.csv/

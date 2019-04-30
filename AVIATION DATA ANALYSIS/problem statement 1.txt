@@ -1,0 +1,5 @@
+hive> SELECT month,COUNT(cancelled) as t FROM aviation
+    > WHERE cancelled = 1 AND cancel_code = 'B'
+    > GROUP BY month
+    > ORDER BY t DESC
+    > LIMIT 1;

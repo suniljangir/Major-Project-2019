@@ -1,0 +1,4 @@
+<property>
+<name> dfs.data.dir </name>
+<value> /rahul1 </value>
+</property>

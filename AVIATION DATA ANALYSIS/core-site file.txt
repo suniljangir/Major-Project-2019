@@ -1,0 +1,4 @@
+<property>
+<name>fs.default.name</name>
+<value>hdfs://192.168.10.191:9005_portA</value>
+</property>
