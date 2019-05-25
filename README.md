@@ -39,7 +39,7 @@ for numpy :--  sudo apt-get install python-pip
 
 
 #How to use :-- 
-We have used here 3 color for detection Red,yellow,Blue(RGY).
+We have used here 3 color for detection Red,yellow,Blue(RBY).
 
                 So we have to use all color tapes on our fingers as a object detection.
                 
