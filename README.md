@@ -8,13 +8,18 @@
                         The mouse can perform all Physical mouse functions Left clik, Right click, Scroll, drag & drop etc.
   
   
+  
 install libraries pyautogui,numpy,cv2,time
 for pyautohui :--sudo pip3 install python3-xlib
                 sudo apt-get install scrot
                 sudo apt-get install python3-tk
                 sudo apt-get install python3-dev
                 sudo pip3 install pyautogui
+                
+                
 for opencv :-- sudo apt-get install python-opencv
+
+
 for numpy :--  sudo apt-get install python-pip  
                 sudo pip install numpy scipy
 
