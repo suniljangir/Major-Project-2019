@@ -2,7 +2,9 @@
 
 
 #Project Name :-- Virtual Mouse
+
 #Submitted By :-- Rishabh kumar, Rajneesh sharma, Surbhi gupta, Mayank kumar
+
 #Project Description :--
                         The project is all about controlling physical mouse gestures virtually.
                         The mouse can perform all Physical mouse functions Left clik, Right click, Scroll, drag & drop etc.
