@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:background="#87ceeb"
+    tools:context="com.login_register.RegsiterOTP">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        >
+   <!-- <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginLeft="120dp"
+        android:id="@+id/registration_photo"
+        android:background="@drawable/register_profile_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        />
+
+    <TextView
+        android:layout_marginLeft="120dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="#02ff48"
+        android:textStyle="bold"
+        android:text="SELECT PROFILE PICTURE"
+        />
+-->
+    </LinearLayout>
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="6"
+    >
+<TextView
+    android:layout_marginLeft="150dp"
+    android:textSize="20dp"
+    android:textColor="@color/colorPrimary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Enter OTP"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/edit_otp"
+        android:layout_width="90dp"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:hint="Enter OTP"
+        android:maxLength="6"
+
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:background="@drawable/login_btnlogin"/>
+</LinearLayout>
+</LinearLayout>

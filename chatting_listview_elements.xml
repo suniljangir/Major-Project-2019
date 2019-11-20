@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <hani.momanii.supernova_emoji_library.Helper.EmojiconTextView
+        android:gravity="start"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:id="@+id/receivermsg"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+    <ImageView
+
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/receiverimage"
+        />
+    <ImageView
+
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/senderimage"
+        />
+    <hani.momanii.supernova_emoji_library.Helper.EmojiconTextView
+        android:gravity="end"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@id/receivermsg"
+        android:id="@+id/sendermsg"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        />
+
+    <Button
+        android:id="@+id/sender_button"
+        android:layout_alignParentRight="true"
+        android:text="play Audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/receiver_button"
+        android:layout_alignParentRight="false"
+        android:text="play Audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/sender_location"
+        android:layout_alignParentRight="true"
+        android:text="location sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/receiver_location"
+        android:layout_alignParentRight="false"
+        android:text="get location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
