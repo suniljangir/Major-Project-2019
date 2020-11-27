@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "898236894283",
+    "firebase_url": "https://grain-protection.firebaseio.com",
+    "project_id": "grain-protection",
+    "storage_bucket": "grain-protection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898236894283:android:8023ff4d4300aef2",
+        "android_client_info": {
+          "package_name": "com.example.siddharth.grainprotection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898236894283-po6ftgcqimpmegtvn2031uoqc9qhbfe7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJuHCdEirjYOf-qC_vhyQ8qQbZqr9NKwA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

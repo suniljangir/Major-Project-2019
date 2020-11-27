@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.siddharth.grainprotection.MapsActivity">
+
+    <fragment  android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Spinner
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/getstate"
+            android:entries="@array/spinnervalues"
+            />
+        <info.hoang8f.widget.FButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buton"
+            android:layout_weight="1"
+            android:text="GET"
+            app:shadowColor="@android:color/black"
+            app:shadowHeight="5dp"
+            app:cornerRadius="4dp"
+            app:shadowEnabled="true"
+            app:buttonColor="@color/btnsignup"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>
