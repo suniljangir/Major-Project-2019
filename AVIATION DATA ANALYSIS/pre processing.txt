@@ -1,0 +1,13 @@
+grunt> REGISTER /home/cloudera/pig_usecase/piggybank.jar;
+[main] INFO org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+[main] INFO org.apache.hadoop.conf.Configuration.deprecation - mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+grunt> A = load '/DelayedFlights.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',','NO_MULTILINE','UNIX','SKIP_INPUT_HEADER');
+grunt> B = foreach A generate (int)$1 as year, (int)$2 as month, (int)$10 as flight_num, (chararray) $18 as dest, (int)$22 as cancelled, (chararray)$23 as cancel_code, 
+(int)$24 as diversion;
+grunt> describe B
+B: {year: int,month: int,flight_num: int,origin: chararray,dest: chararray,cancelled: int,cancel_code: chararray,diversion: int}
+grunt> C= FILTER B BY (year is not null) AND (month is not null) AND (flight_num is not null) AND (origin is not null) AND (dest is not null) AND (cancelled is not null
+) AND (cancel_code is not null) AND (diversion is not null);
+grunt>
+
+grunt> STORE C INTO 'aviation' USING org.apache.hive.hcatalog.pig.HCatStorer();
